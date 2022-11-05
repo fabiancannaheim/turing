@@ -4,7 +4,8 @@ import java.util.List;
 
 /**
  * This class represents an implementation of a universal turing machine.
- * A universal turing machine takes a "normal" turing machine as an encoded input.
+ * A universal turing machine takes a "normal" turing machine as an encoded
+ * input.
  * In this case, the machine takes a binary machine representation as in the
  * following example:
  * M = ( {q1,q2,q3}, {0,1}, {0,1,⌴}, δ, q1,⌴, {q2} ) with:
@@ -21,7 +22,7 @@ import java.util.List;
  * e.g. δ(q1,1) = (q3,0,R) <=> 0100100010100
  */
 public class UniversalTuringMachine {
-	
+
     private String[] tape;
     private String mode;
     private int currentTapeIndex;
@@ -196,46 +197,42 @@ public class UniversalTuringMachine {
 
     public static void main(String[] args) {
 
-        String tmCodeMultiplication = 	"010100100010011" +
-										"010010000000100010011" +
-										"00101001010011" +
-										"00100100010010011" +
-										"00010100001000010011" +
-										"00010010000001001011" +
-										"000010100001010011" +
-										"00001001000010010011" +
-										"00001000100000101011" +
-										"0000010100000101011" +
-										"000001001000001001011" +
-										"000001000010001000010011" +
-										"000000101000000101011" +
-										"00000010010000001001011" +
-										"000000100001000000101011" +
-										"000000100010100010011" +
-										"00000001010000000100010011" +
-										"00000001001000000001000100";
-										
-		String multiplicationCode = "0001000001";
-								
+        String tmCodeMultiplication = "010100100010011" +
+                "010010000000100010011" +
+                "00101001010011" +
+                "00100100010010011" +
+                "00010100001000010011" +
+                "00010010000001001011" +
+                "000010100001010011" +
+                "00001001000010010011" +
+                "00001000100000101011" +
+                "0000010100000101011" +
+                "000001001000001001011" +
+                "000001000010001000010011" +
+                "000000101000000101011" +
+                "00000010010000001001011" +
+                "000000100001000000101011" +
+                "000000100010100010011" +
+                "00000001010000000100010011" +
+                "00000001001000000001000100";
+        String multiplicationCode = "0001000001";
         String inputCodeMultiplication = tmCodeMultiplication + "111" + multiplicationCode;
 
         String tmCodeAddition = "010101010011" +
-								"01001001001011" +
-								"0010100010010011" +
-								"0001010001010011" +
-								"000100100010010011" +
-								"0001000100001010011" +
-								"00001010000101011" +
-								"000010001000010001011" +
-								"00001001000001001011" +
-								"0000010100010010011" +
-								"000001001000001001011" +
-								"0000010001000000100010011" +
-								"0000001001000000100010011" +
-								"000000101000000010100";
-								
+                "01001001001011" +
+                "0010100010010011" +
+                "0001010001010011" +
+                "000100100010010011" +
+                "0001000100001010011" +
+                "00001010000101011" +
+                "000010001000010001011" +
+                "00001001000001001011" +
+                "0000010100010010011" +
+                "000001001000001001011" +
+                "0000010001000000100010011" +
+                "0000001001000000100010011" +
+                "000000101000000010100";
         String additionCode = "000010001";
-		
         String inputCodeAddition = tmCodeAddition + "111" + additionCode;
 
         int tapeSize = 200;
@@ -253,9 +250,9 @@ public class UniversalTuringMachine {
         int numberG = 23;
         int numberH = 0;
 
-        UniversalTuringMachine turingMachine = new UniversalTuringMachine(tmCodeMultiplication, numberC, numberD, mode, tapeSize);
-        
-		turingMachine.printTape();
+        UniversalTuringMachine turingMachine = new UniversalTuringMachine(tmCodeMultiplication, numberC, numberD, mode,
+                tapeSize);
+        turingMachine.printTape();
         turingMachine.printTransitions();
         turingMachine.calculate();
         turingMachine.getResults();
